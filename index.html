@@ -130,10 +130,10 @@
         }
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
-        .book-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 25px; }
+.book-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 25px; }
         .book-slot {
-            background: #ffffff; border-radius: 24px; padding: 25px;
-            border: 2px solid #f1f5f9; height: 130px; display: flex;
+            background: #ffffff; border-radius: 20px; padding: 20px;
+            border: 2px solid #f1f5f9; height: 110px; display: flex;
             flex-direction: column; justify-content: center; align-items: center;
             position: relative; transition: all 0.3s; cursor: pointer;
         }
@@ -151,6 +151,7 @@
         <div class="sidebar-footer">
             <button class="btn-primary" onclick="showSection('config')">✨ 新学习</button>
             <button class="btn-outline" onclick="showSection('settings')" style="color:#94a3b8">⚙️ 系统设置</button>
+            <button class="btn-outline" onclick="showSection('about')" style="color:#94a3b8">🔎 关于</button>
         </div>
     </aside>
 
@@ -256,6 +257,56 @@
                     <div id="bookGrid" class="book-grid"></div>
                 </div>
             </section>
+
+            <section id="aboutSection" class="hidden">
+                <div class="card">
+                    <h2 style="text-align: center; margin-bottom: 30px; color: #0f172a;">关于 LexiStory</h2>
+
+                    <div style="text-align: center; padding: 30px; background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%); border-radius: 20px; margin-bottom: 30px;">
+                        <p style="font-size: 20px; color: #0f172a; line-height: 1.8; font-weight: 600;">
+                            单词不是被记住的，而是在故事里遇见的。<br>
+                            <span style="font-size: 16px; color: #64748b; font-weight: normal;">从今天起，你手里的每一本单词书，都可以讲述独一无二的故事。</span>
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 15px;">一、LexiStory 是什么？</h3>
+                        <p style="color: #475569; line-height: 1.9; font-size: 14px;">
+                            AI发展迅速，但学外语这件事并没有因为AI变强就消失。工具可以帮你翻译、帮你总结，但"把单词装进自己脑子里"这件事，还是得自己来。LexiStory想做的，就是让这个过程不那么枯燥，甚至有点意思。
+                        </p>
+                        <p style="color: #475569; line-height: 1.9; font-size: 14px; margin-top: 10px;">
+                            传统背单词的方式，大多是词表、卡片、例句。背时觉得记住了，过两天再看——全忘了。问题出在哪？<strong>单词是孤立的，没有语境，没有情绪，也没有记忆锚点</strong>。
+                        </p>
+                        <p style="color: #475569; line-height: 1.9; font-size: 14px; margin-top: 10px;">
+                            LexiStory做的事情很简单：把当天要背的单词，自动生成一篇有逻辑、有情节的英文故事，配上地道流畅的中文翻译，让你在阅读中"遇见"单词，而不是"背诵"单词。
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 15px;">二、它能做什么？</h3>
+
+                        <div style="margin-bottom: 20px; padding: 20px; background: #f8fafc; border-radius: 16px;">
+                            <h4 style="font-size: 15px; color: var(--primary); margin-bottom: 10px;">1. 导入单词书</h4>
+                            <p style="color: #64748b; line-height: 1.8; font-size: 13px;">支持TXT格式（每行一词，无需释义），最多同时管理 4 本单词书，支持切换学习和多语种学习。</p>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding: 20px; background: #f8fafc; border-radius: 16px;">
+                            <h4 style="font-size: 15px; color: var(--primary); margin-bottom: 10px;">2. 生成你的专属故事</h4>
+                            <p style="color: #64748b; line-height: 1.8; font-size: 13px;">学习场景个性化定制：接入硅基流动 API，选择调用的 AI 模型；选单词数量（10/20/30/50/自定义 ≤60）；选故事风格（童话、小说、悬疑、科幻、学术，或自己定义），选篇幅长短（短篇/中篇/长篇）。完成后，AI 将自动生成一篇英文故事。</p>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding: 20px; background: #f8fafc; border-radius: 16px;">
+                            <h4 style="font-size: 15px; color: var(--primary); margin-bottom: 10px;">3. 中英对照阅读 + 本日词汇表</h4>
+                            <p style="color: #64748b; line-height: 1.8; font-size: 13px;">上英文，下中文，目标单词在原文和译文中紫色高亮，译文默认隐藏，想看的时候点一下——正好可以用来自测：先自己读，读不懂再对照。同时提供本日单词表，方便复习巩固。</p>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding: 20px; background: #f8fafc; border-radius: 16px;">
+                            <h4 style="font-size: 15px; color: var(--primary); margin-bottom: 10px;">4. 完形填空自测</h4>
+                            <p style="color: #64748b; line-height: 1.8; font-size: 13px;">将故事变为完形填空，将单词卡片拖到对应的横线上。拖对了就吸住，拖错了再来——像玩游戏一样轻松简单。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -293,13 +344,19 @@
         }
 
         function showSection(id) {
-            const sections = ['import','config','loading','reading','practice','settings'];
+            const sections = ['import','config','loading','reading','practice','settings','about'];
             sections.forEach(s => {
                 const el = document.getElementById(s+'Section');
                 if(el) el.classList.add('hidden');
             });
             document.getElementById(id+'Section').classList.remove('hidden');
-            document.getElementById('headerTitle').innerText = id === 'config' ? '定制学习' : (id === 'practice' ? '挑战时刻' : 'LexiStory');
+            const titles = {
+                'config': '定制学习',
+                'practice': '挑战时刻',
+                'settings': '系统设置',
+                'about': '关于'
+            };
+            document.getElementById('headerTitle').innerText = titles[id] || 'LexiStory';
         }
 
         function toggleCustomStyle(val) {
